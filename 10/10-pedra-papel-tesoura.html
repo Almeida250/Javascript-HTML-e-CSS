@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pedra Papel Tesoura</title>
+    <link rel="stylesheet" href="styles/cu.css">
+  </head>
+  <body>
+    <p class="titulo">Pedra Papel e Tesoura</p>
+    <button onclick="
+      playGame('rock');
+    " class="botao-escolha">
+    <img src="imagens/rock-emoji.png" class="icone-escolha"></button>
+
+    <button onclick="
+      playGame('paper');
+    " class="botao-escolha">
+    <img src="imagens/paper-emoji.png" class="icone-escolha"></button>
+
+    <button onclick="
+      playGame('scissors');
+    " class="botao-escolha">
+    <img src="imagens/scissors-emoji.png" class="icone-escolha"></button>
+
+
+    <p class="js-resultado resultado"></p>
+    <p class="js-escolha"></p>
+    <p class="js-pontuacao pontuacao"></p>
+
+
+    <button onclick="
+      score.vitorias = 0;
+      score.derrotas = 0;
+      score.empates = 0;
+      localStorage.removeItem('score');
+      attPontuacao();
+    " class="botao-zerar-pontuacao">Zerar Pontuação</button>
+
+    <script src="scripts/10-pedra-papel-tesoura.js"></script>
+  </body>
+</html>

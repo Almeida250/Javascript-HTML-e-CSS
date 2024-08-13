@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+    
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="botao9b-js">9b</button>
+    <p>Cara ou Coroa:</p>
+    <button onclick="
+    document.querySelector('.escolha')
+      .innerHTML = 'Você escolheu: Cara'">Cara</button>
+    <button onclick="
+    document.querySelector('.escolha')
+      .innerHTML = 'Você escolheu: Coroa'">Coroa</button>
+    <p class="escolha"></p>
+    <script>
+      //9a)crie um botão. use Document.querySelector('') pra pegar o botão da pagina e visualizar ele no console
+        console.log(document.querySelector('button'))
+
+      //9b)crie um outro botão (9b) e, usando Javascript, mude o texto desse segundo botão para "9b feito!" (dica: adicione uma classe e use o .querySelector)
+        document.querySelector('.botao9b-js')
+          .innerHTML = '9b feito!'
+
+      //9c)crie dois botões (cara e coroa) e um parágrafo embaixo deles.quando você clicar em "cara", mostre o texto "você escolheu: cara" e a mesma coisa para coroa
+
+    </script>
+  </body>
+ </html>

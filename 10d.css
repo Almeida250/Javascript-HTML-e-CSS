@@ -1,0 +1,12 @@
+.on {
+background-color: white;
+font-family: Arial;
+cursor: pointer;
+padding: 10px 15px;
+border-radius: 10px;
+font-size: 20px;
+}
+.off {
+  background-color: black;
+  color: aliceblue;
+}

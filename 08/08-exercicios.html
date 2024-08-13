@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+
+  </body>
+
+  <script>
+    const produto1 = {
+      nome: 'bola de basquete',
+      preco: 2095,
+    }
+    const produto2 = {
+      nome: 'bola de basquete',
+      preco: 2095
+    }
+
+    function compararProduto(produto1, produto2) {
+      if(produto1.nome == produto2.nome &&
+      produto1.preco == produto2.preco) {
+        return true
+      } else{
+        return false
+      }
+    }
+    console.log(compararProduto(produto1, produto2))
+
+    console.log('BOM DIA'.toLowerCase().repeat(5))
+  </script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .add-carrinho {
+        background-color: rgb(255, 216, 20);
+        padding: 5px;
+        border-radius: 200px;
+        border: none;
+        font-family: Arial;
+        font-weight: bold;
+      } 
+      .chamar {
+        background-color: black;
+        color:aliceblue;
+        border: none;
+        font-weight: bold;
+        border-radius: 7px;
+        padding: 12px;
+        margin-right: 15px;
+      }
+      .agendar {
+        background-color: rgb(230, 230, 230);
+        border: none;
+        font-weight: bold;
+        border-radius: 7px;
+        padding: 12px;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <button class="add-carrinho">Adicionar ao carrinho</button>
+    <p></p>
+    <button class="chamar">Chamar agora</button> <button class="agendar">Agendar para depois</button>
+
+    <button class="js-button">teste</button>
+  </body>
+
+  <script>
+    let botao = document.querySelector('.js-button');
+    console.log(botao.classList.contains('js-button'))
+  </script>
+</html>

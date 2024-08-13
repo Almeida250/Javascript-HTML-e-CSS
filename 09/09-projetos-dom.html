@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projetos DOM</title>
+  </head>
+  <body>
+    <p>Botão de se inscrever do Youtube</p>
+    <button onclick="
+    inscrever ();
+    " class="js-subscribe-button">Inscreva-se</button>
+
+    <p>Calculadora de Frete</p>
+    <input placeholder="Insira o custo do pedido" 
+    class="js-custo-input" onkeydown="
+    calcularTotalEnter(event);" >
+    <button onclick="
+    calcularTotal();">Calcular</button>
+    <p class="js-custo-total"></p>
+
+    <script>
+      String(25)
+      window.console.log('25' - 5)
+
+      function calcularTotal() {
+        const elementoInput = document.querySelector('.js-custo-input');
+        let custo = Number(elementoInput.value);
+
+          if (custo < 40) {
+            custo += 10
+          } 
+          
+          document.querySelector('.js-custo-total').innerHTML = `R$${custo}`
+      }
+
+      function calcularTotalEnter (event) {
+        if (event.key === 'Enter') {
+          calcularTotal();
+        }
+      }
+
+      function inscrever () { buttonElement = document.querySelector('.js-subscribe-button');
+
+      if (buttonElement.innerText === 'Inscreva-se') {
+        buttonElement.innerHTML = 'Inscrito';
+      } else {
+         buttonElement.innerHTML = 'Inscreva-se';
+      }
+    }
+    </script>
+  </body>
+</html>

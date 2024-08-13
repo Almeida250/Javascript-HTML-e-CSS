@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projetos DOM</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+      .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 70px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+      .esta-inscrito {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+      .custo-input {
+        font-size: 15px;
+        padding: 10px;
+      }
+      .calcular-button {
+        background-color: green;
+        color: white;
+        border: none;
+        font-size: 15px;
+        padding: 12px 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Botão de se inscrever do Youtube</p>
+    <button onclick="
+    inscrever ();
+    " class="js-subscribe-button subscribe-button">Inscreva-se</button>
+
+    <p>Calculadora de Frete</p>
+    <input placeholder="Insira o custo do pedido" 
+    class="js-custo-input custo-input" onkeydown="
+    calcularTotalEnter(event);" >
+    <button onclick="
+    calcularTotal();" class="calcular-button">Calcular</button>
+    <p class="js-custo-total"></p>
+
+    <script>
+      String(25)
+      window.console.log('25' - 5)
+
+      function calcularTotal() {
+        const elementoInput = document.querySelector('.js-custo-input');
+        let custo = Number(elementoInput.value);
+
+          if (custo < 40) {
+            custo += 10
+          } 
+          
+          document.querySelector('.js-custo-total').innerHTML = `R$${custo}`
+      }
+
+      function calcularTotalEnter (event) {
+        if (event.key === 'Enter') {
+          calcularTotal();
+        }
+      }
+
+      function inscrever () { buttonElement = document.querySelector('.js-subscribe-button');
+
+      if (buttonElement.innerText === 'Inscreva-se') {
+        buttonElement.innerHTML = 'Inscrito';
+        buttonElement.classList.add('esta-inscrito')
+      } else {
+         buttonElement.innerHTML = 'Inscreva-se';
+         buttonElement.classList.remove('esta-inscrito')
+      }
+    }
+    </script>
+  </body>
+</html>

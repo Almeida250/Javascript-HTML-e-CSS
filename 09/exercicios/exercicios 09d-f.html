@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+ <html>
+  <head></head>
+  <body>
+    <input placeholder="coloque o seu nome" class="js-colocar-nome"
+      onkeydown="colocarNomeEnter(event)"> 
+    <button onclick=" colocarNome();">Enviar</button>
+    <p class="js-nome-linha"></p>
+    <script>
+      function colocarNome() {
+        const colocarNome = document.querySelector('.js-colocar-nome');
+        document.querySelector('.js-nome-linha').innerHTML = `Olá ${colocarNome.value}`
+      } 
+      function colocarNomeEnter(event) {
+        if (event.key === 'Enter') {colocarNome();}
+      }
+    </script>
+  </body>
+ </html>
