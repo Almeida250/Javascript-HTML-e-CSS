@@ -1,4 +1,4 @@
-const listaTarefa = ['fazer janta', 'lavar a louça'];
+const listaTarefa = [];
 
 mostrarListaTarefa();
 
@@ -7,7 +7,15 @@ function mostrarListaTarefa() {
 
   for (let i = 0; i < listaTarefa.length; i++) {
     const tarefa = listaTarefa[i];
-    const html = `<p>${tarefa}</p>`;
+    const html = ` 
+      <p>
+        ${tarefa}
+        <button onclick="
+          listaTarefa.splice(${i}, 1); 
+          mostrarListaTarefa();
+      ">Deletar</button>
+      </p>
+    `;
     listaTarefaHTML += html;
   }
   console.log(listaTarefaHTML);
