@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--crie um array de strings, faça um loop sobre esse array, e cheque se a string 'procurar' está dentro do array,
+    se estiver, console.log() o index de 'procurar', se não, console,log -1-->
+  </head>
+  <body>
+    <script>
+      let arrayString = [, "olá", "mundo" ,"procurar", "ótimo"];
+
+      let index = -1
+      for (let i = 0; i < arrayString.length; i++) {
+        if (arrayString[i] === "procurar") {
+          index = i;
+        }
+      }
+
+      console.log(index);
+
+      arrayString = ["palavra" , "não encontrada",];
+
+      index = -1;
+      for (let i = 0; i < arrayString.length; i++) {
+        if (arrayString[i] === 'procurar') {
+          index = i;
+        } 
+      }
+
+      console.log(index);
+    </script>
+  </body>
+</html>

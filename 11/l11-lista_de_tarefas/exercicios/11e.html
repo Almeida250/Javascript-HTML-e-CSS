@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Crie uma função acheIndex(array, palavra) onde ele procura a palavra no array e retorna o index da primeira aparição da string, se não existir a string, retorne -1-->
+  </head>
+  <body>
+    <script>
+      function acheIndex(array, palavra) {
+
+        let index = -1
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === palavra) {
+            //invés de criar uma variável  acumuladora e att ela no loop, pode retornar i diretamente já que isso é uma função.
+            return i;
+          }
+        }
+        //se n tiver a palavra na função, posso retornar -1 diretamente
+        return -1;
+      }
+
+      console.log(acheIndex(["maçã", "uva", "pera", "uva"], "uva"));
+      console.log(acheIndex(["maçã", "uva", "pera", "uva"], "abacaxi"));
+      
+    </script>
+  </body>
+</html>

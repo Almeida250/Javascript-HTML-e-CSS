@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Crie uma função deletarOvo(comidas) onde ele pega uma array de strings e retorna o array onde todas as strings "ovo" são removidas-->
+  </head>
+  <body>
+    <script>
+      function deletarOvo(comidas) {
+        const resultado = [];
+        
+        for (let i = 0; i < comidas.length; i++) { 
+          //se a string é "ovo", dê continue para pular
+          if (comidas[i] === 'ovo') {
+            continue;
+          } 
+          //não precisa de else pq só chega o código aqui se o if encima for falso
+          resultado.push(comidas[i]);
+        }
+        
+        return resultado;
+      }
+
+      console.log(deletarOvo(["ovo", "arroz", "ovo", "ovo", "peixe"]));
+      
+    </script>
+  </body>
+</html>

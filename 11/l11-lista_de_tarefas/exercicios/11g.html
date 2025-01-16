@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Atualize o exercício 11f onde ele remove os 2 primeiros "ovo" do array-->
+  </head>
+  <body>
+    <script>
+      function deletarOvo(comidas) {
+        const resultado = [];
+        let ovosDeletados = 0
+        
+        for (let i = 0; i < comidas.length; i++) { 
+          //se a string é "ovo", dê continue para pular
+          //atualizei o if verificando se passou de 2 ovosDeletados
+          if (comidas[i] === 'ovo' && ovosDeletados < 2) {
+          //se não passou de 2 ovos deletados, aumenta o valor do ovosDeletados.  
+          //isso tem q ser feito antes do continue, pois se não ela vai pular isso
+            ovosDeletados++;
+            continue;
+          } 
+          //não precisa de else pq só chega o código aqui se o if encima for falso
+          resultado.push(comidas[i]);
+        }
+        
+        return resultado;
+      }
+
+      console.log(deletarOvo(["ovo", "arroz", "ovo", "ovo", "peixe", "ovo"]));
+      
+    </script>
+  </body>
+</html>

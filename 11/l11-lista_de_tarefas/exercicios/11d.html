@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Modifique 11c para que o "procurar" apareça várias vezes, e dê um console.log no index da primeira vez que apareceu (use o break;) "-->
+  </head>
+  <body>
+    <script>
+      let arrayString = ["procurar", "olá", "mundo" , "ótimo", "procurar"];
+
+      let index = -1
+      for (let i = 0; i < arrayString.length; i++) {
+        if (arrayString[i] === "procurar") {
+          index = i;
+          break;
+        }
+      }
+
+      console.log(index);
+
+      arrayString = ["palavra" , "não encontrada",];
+
+      index = -1;
+      for (let i = 0; i < arrayString.length; i++) {
+        if (arrayString[i] === 'procurar') {
+          index = i;
+          break;
+        } 
+      }
+
+      console.log(index);
+    </script>
+  </body>
+</html>
