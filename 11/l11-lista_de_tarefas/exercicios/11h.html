@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Arrays possuem um método chamado .reverse(), onde ele inverte a ordem dos valores no array.
+    Atualize o exercício para remover apenas os 2 ultimos "ovo" do array usando o .reverse()-->
+  </head>
+  <body>
+    <script>
+      function deletarOvo(comidas) {
+        //invertendo o array.
+        const resultadoInvertido = comidas.reverse();
+
+        const resultado = [];
+        let ovosDeletados = 0
+        
+        for (let i = 0; i < resultadoInvertido.length; i++) { 
+
+          if (resultadoInvertido[i] === 'ovo' && ovosDeletados < 2) {
+            ovosDeletados++;
+            continue;
+          } 
+          resultado.push(resultadoInvertido[i]);
+        }
+        //no final, dando .reverse() no resultado final
+        return resultado.reverse();
+      }
+
+      console.log(deletarOvo(["ovo", "arroz", "ovo", "ovo", "peixe", "ovo"]));
+      
+    </script>
+  </body>
+</html>
