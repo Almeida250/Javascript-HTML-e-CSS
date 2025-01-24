@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head><!--Crie uma cópia do exercícios 11e, onde criei o acheIndex(). Embaixo dele, crie a função unico(array) onde ele pega um array de strings e retorna um array onde cada string aparece apenas uma vez(sem string duplicadas) --></head>
+  <body>
+    <script>
+    function acheIndex(array, palavra) {
+
+    let index = -1
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] === palavra) {
+        //invés de criar uma variável  acumuladora e att ela no loop, pode retornar i diretamente já que isso é uma função.
+        return i;
+      }
+    }
+    //se n tiver a palavra na função, posso retornar -1 diretamente
+    return -1;
+    }
+
+    function unico(array) {
+      const resultado = [];
+
+      for(let i = 0; i < array.length; i++) {
+
+        const palavra = array[i];
+
+        if(acheIndex(resultado, palavra) === -1) {
+          resultado.push(palavra);
+        }
+      }
+      return resultado; 
+
+    }
+
+    console.log(unico(["maçã", "uva", "pera", "uva", "uva"]));
+    console.log(unico(["vermelho", "azul", "amarelo", "vermelho", "azul"]));
+
+    </script>
+  </body>
+</html>
