@@ -4,23 +4,28 @@ let score = JSON.parse(localStorage.getItem('score')) || {
   empates: 0
 };
 
+let autoPlayLigado = false;
+let idIntervalo;
+
 function attPontuacao() {
   document.querySelector('.js-pontuacao')
     .innerHTML = `Vitórias ${score.vitorias}, Derrotas: ${score.derrotas}, Empates: ${score.empates}`;
 }
 
-
 attPontuacao();
 
-/*
-if (!score) {
-  score = {
-    wins: 0,
-    losses: 0,
-    ties: 0
-  };
+function autoPlay() {
+  if (!autoPlayLigado) {
+    idIntervalo = setInterval(() => {
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    autoPlayLigado = true;
+  } else {
+    clearInterval(idIntervalo);
+    autoPlayLigado = false;
+  }
 }
-*/
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -72,11 +77,10 @@ function playGame(playerMove) {
 
   document.querySelector('.js-escolha')
     .innerHTML = ` Você  
-    <img src="imagens/${playerMove}-emoji.png" class="icone-escolha">
-    <img src="imagens/${computerMove}-emoji.png" class="icone-escolha">
+    <img src="/10/imagens/${playerMove}-emoji.png" class="icone-escolha">
+    <img src="/10/imagens/${computerMove}-emoji.png" class="icone-escolha">
     </p>
-    `
-
+    `;
 }
 
 function pickComputerMove() {

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+<title>Funções Avançadas</title>
+  <body>
+    <script>
+      /*
+      // esse function é um atalho para esse tipo de código : var ola = function() {}
+      function ola() {
+        console.log('olá');
+      }
+      ola();
+      //ela é melhor pois é mais facil a leitura e da para chamar a função antes que ela foi criada (hoisting)
+
+      const numero = 2; 
+      const funcao1 = function() {
+        console.log('olá2');
+      };
+
+      console.log(funcao1);
+      console.log(typeof funcao1);
+      funcao1();
+      //metodo: função salvo dentro de um objeto
+
+      const objeto1 = {
+        num: 2,
+        fun: function() {
+          console.log('ola3');
+        }
+      };
+      objeto1.fun();
+
+      //passando um valor para uma função:
+      function display(param) {
+        console.log(param);
+      }
+      display(2);
+
+      //callback:
+      function run(param) {
+        param();
+      }
+      run(function() {
+        console.log('olá4');
+      });
+      */
+
+      //código assíncrono: não espera uma linha de código terminar para ir pra próxima linha (não bloqueia o código)
+      //código sincrono:espera uma linha de código terminar para ir pra outro
+      setTimeout(function() {
+        console.log('timeout');
+        console.log('timeout2');
+      }, 3000);
+
+      console.log('proxima linha');
+
+      setInterval(function() {
+        console.log('intervalo');
+      }, 3000);
+
+      console.log('proxima linha 2');
+    </script>
+  </body>
+</head>
