@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="12_lista_de_tarefas.css">
+  </head>
+
+  <body>
+    <p>Lista de tarefas </p>
+
+    <div class = "lista-input-grid">
+      <input placeholder="nome da tarefa"
+        class="js-tarefa1-input nome-input"> 
+      <input type="date"
+        class = "js-data-input data-input">
+      <button onclick="
+        addTarefa();
+      " class = "adicionar-botao">Adicionar</button>
+    </div>
+
+    <div class="js-lista-tarefa lista-grid"></div>
+
+    <script src="12_lista_de_tarefas.js"></script>
+  </body>
+</html>

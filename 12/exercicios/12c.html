@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+<!--Crie um botão onde depois de um segundo quando for clicado, o texto dele muda-->
+</head>
+  <body>
+    <button class="terminar" onclick="mudarTexto()">terminar</button>
+    <script>
+      function mudarTexto () {
+        const botao = document.querySelector('.terminar');
+
+        setTimeout(function() {
+          botao.innerHTML = 'terminado!';
+        }, 1000)
+      }
+    </script>
+  </body>

@@ -46,6 +46,8 @@
 
       //código assíncrono: não espera uma linha de código terminar para ir pra próxima linha (não bloqueia o código)
       //código sincrono:espera uma linha de código terminar para ir pra outro
+
+      /*
       setTimeout(function() {
         console.log('timeout');
         console.log('timeout2');
@@ -58,6 +60,20 @@
       }, 3000);
 
       console.log('proxima linha 2');
+      */
+
+      [
+        'fazer almoço',
+        'lavar a louça',
+        'assistir youtube'
+      ].forEach(function(valor, index) {
+        if(valor === 'lavar a louça') {
+          return;
+        }
+
+        console.log(index);
+        console.log(valor);
+      });
     </script>
   </body>
 </head>

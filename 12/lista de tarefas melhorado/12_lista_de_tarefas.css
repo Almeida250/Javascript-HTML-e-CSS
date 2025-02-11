@@ -1,0 +1,40 @@
+body {
+  font-family: Arial;
+}
+
+.lista-grid,
+.lista-input-grid {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.lista-input-grid {
+  margin-bottom: 10px;
+  align-items: stretch;
+}
+
+.nome-input,
+.data-input {
+  font-size: 15px;
+  padding: 6px;
+}
+
+.adicionar-botao {
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.deletar-botao {
+  background-color: darkred;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 10px;
+}
