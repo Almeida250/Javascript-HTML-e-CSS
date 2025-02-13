@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+<!--Crie um botão escrito 'adicionar ao carrinho'.Ao clicar nesse botão, aparece 'adicionado' embaixo dele, e depois de 2 segundos, essa mensagem some-->
+</head>
+  <body>
+    <button class="botao" onclick="mudarTexto()">Adicionar ao carrinho</button>
+    <p class="texto"></p>
+    <script>
+      function mudarTexto () {
+        const texto = document.querySelector('.texto');
+        texto.innerHTML = 'Adicionado!'; 
+
+        setTimeout(function() {
+          texto.innerHTML = '';
+        }, 2000)
+      }
+    </script>
+  </body>

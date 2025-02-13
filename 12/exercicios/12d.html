@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+<!--Continuando pelo 12c, Crie um botão onde quando clicado, aparece na hora o texto "carregando..." e depois de um segundo o texto muda para "terminado"-->
+</head>
+  <body>
+    <button class="terminar" onclick="mudarTexto()">terminar</button>
+    <script>
+      function mudarTexto () {
+        const botao = document.querySelector('.terminar');
+        botao.innerHTML = 'carregando...';
+
+        setTimeout(function() {
+          botao.innerHTML = 'terminado!';
+        }, 1000)
+      }
+    </script>
+  </body>
