@@ -5,19 +5,19 @@
   <title>App</title>
   </head>
   <body>
-    <button onclick=
+    <button onclick="
     nMensagen++;
-    >Adicionar</button>
+    ">Adicionar</button>
 
-    <button onclick=
+    <button onclick="
     nMensagen--; 
-    >Remover</button>
+    ">Remover</button>
     <script>
       let nMensagen = 2
 
       setInterval(function() {
         if (document.title === 'App') {
-          document.title = `(${nMensagen })novas mensagens`;
+          document.title = `(${nMensagen }) novas mensagens`;    
         } else {
           document.title = 'App';
         }
