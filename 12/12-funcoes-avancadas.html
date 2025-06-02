@@ -1,81 +1,132 @@
 <!DOCTYPE html>
+
 <head>
-<title>Funções Avançadas</title>
-  <body>
-    <script>
-      /*
-      // esse function é um atalho para esse tipo de código : var ola = function() {}
-      function ola() {
-        console.log('olá');
+  <title>Funções Avançadas</title>
+
+<body>
+  <button class="js-button">Click</button>
+
+  <script>
+    const buttonElement = document.querySelector('.js-button');
+
+    const eventListener = () => {
+      console.log('click');
+    };
+
+    buttonElement.addEventListener('click', eventListener);
+
+    buttonElement.removeEventListener('click', eventListener);
+
+    buttonElement.addEventListener('click', () => {
+      console.log('click2');
+    });
+
+
+
+    /*
+    // esse function é um atalho para esse tipo de código : var ola = function() {}
+    function ola() {
+      console.log('olá');
+    }
+    ola();
+    //ela é melhor pois é mais facil a leitura e da para chamar a função antes que ela foi criada (hoisting)
+
+    const numero = 2;
+    const funcao1 = function() {
+      console.log('olá2');
+    };
+
+    console.log(funcao1);
+    console.log(typeof funcao1);
+    funcao1();
+    //metodo: função salvo dentro de um objeto
+
+    const objeto1 = {
+      num: 2,
+      fun: function() {
+        console.log('ola3');
       }
-      ola();
-      //ela é melhor pois é mais facil a leitura e da para chamar a função antes que ela foi criada (hoisting)
+    };
+    objeto1.fun();
 
-      const numero = 2; 
-      const funcao1 = function() {
-        console.log('olá2');
-      };
+    //passando um valor para uma função:
+    function display(param) {
+      console.log(param);
+    }
+    display(2);
 
-      console.log(funcao1);
-      console.log(typeof funcao1);
-      funcao1();
-      //metodo: função salvo dentro de um objeto
+    //callback:
+    function run(param) {
+      param();
+    }
+    run(function() {
+      console.log('olá4');
+    });
+    */
 
-      const objeto1 = {
-        num: 2,
-        fun: function() {
-          console.log('ola3');
-        }
-      };
-      objeto1.fun();
+    //código assíncrono: não espera uma linha de código terminar para ir pra próxima linha (não bloqueia o código)
+    //código sincrono:espera uma linha de código terminar para ir pra outro
 
-      //passando um valor para uma função:
-      function display(param) {
-        console.log(param);
+    /*
+    setTimeout(function() {
+      console.log('timeout');
+      console.log('timeout2');
+    }, 3000);
+
+    console.log('proxima linha');
+
+    setInterval(function() {
+      console.log('intervalo');
+    }, 3000);
+
+    console.log('proxima linha 2');
+    */
+
+    /*
+
+    [
+      'fazer almoço',
+      'lavar a louça',
+      'assistir youtube'
+    ].forEach((valor, index) => {
+      if (valor === 'lavar a louça') {
+        return;
       }
-      display(2);
 
-      //callback:
-      function run(param) {
-        param();
+      console.log(index);
+      console.log(valor);
+    });
+
+    const regularFunction = function (param, param2) {
+      console.log('salve')
+      return 5;
+    }
+    regularFunction();
+
+    const arrowFunction = (param, param2) => {
+      console.log('salve')
+      return 3;
+    };
+    arrowFunction();
+
+    const oneParam = param => {
+      console.log(param + 1);
+    };
+    oneParam(2);
+
+    const oneLine = () => 2 + 3;
+    console.log(oneLine());
+
+
+    const object 2 = {
+      method: () =>{
+
+      },
+      method() {
+
       }
-      run(function() {
-        console.log('olá4');
-      });
-      */
-
-      //código assíncrono: não espera uma linha de código terminar para ir pra próxima linha (não bloqueia o código)
-      //código sincrono:espera uma linha de código terminar para ir pra outro
-
-      /*
-      setTimeout(function() {
-        console.log('timeout');
-        console.log('timeout2');
-      }, 3000);
-
-      console.log('proxima linha');
-
-      setInterval(function() {
-        console.log('intervalo');
-      }, 3000);
-
-      console.log('proxima linha 2');
-      */
-
-      // teste
-
-      [
-        'fazer almoço',
-        'lavar a louça',
-        'assistir youtube'
-      ].forEach(function(valor, index) {
-        if(valor === 'lavar a louça') {
-          return;
-        }
-
-        console.log(index);
-        console.log(valor);
-      });
-    </script>
-  </body>
+    }
+    */
+  </script>
+</body>
 </head>

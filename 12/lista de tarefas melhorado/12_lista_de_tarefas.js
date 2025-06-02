@@ -7,7 +7,7 @@ mostrarListaTarefa();
 
 function mostrarListaTarefa() {
   let listaTarefaHTML = '';
-  listaTarefa.forEach(function(tarefaObjeto, index) {
+  listaTarefa.forEach((tarefaObjeto, index) => {
       const { nome, data } = tarefaObjeto;
       const html = ` 
         <div> ${nome}</div>
