@@ -47,9 +47,15 @@ document.querySelector('.js-botao-tesoura')
     playGame('scissors')
   })
 
-  
-document.body.addEventListener('keydown', () => {
-  console.log('tecla pressionada')
+//ao invés de clicar na tela, vc pressiona as teclas do teclado e ele joga  
+document.body.addEventListener('keydown', (evento) => {
+  if (evento.key === '1') {
+    playGame('rock');
+  } else if (evento.key === '2') {
+    playGame('paper')
+  } else if (evento.key === '3') {
+    playGame('scissors')
+  }
 })
 
 function playGame(playerMove) {
