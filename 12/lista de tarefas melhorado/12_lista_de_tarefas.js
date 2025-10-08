@@ -32,7 +32,6 @@ function mostrarListaTarefa() {
       mostrarListaTarefa();
     });
   });
-
 }
 
 //a msm coisa que o "onclick" do html, mas no javascript
