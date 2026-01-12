@@ -62,6 +62,7 @@
       console.log('proxima linha 2');
       */
 
+      /*
       [
         'fazer almoço',
         'lavar a louça',
@@ -74,6 +75,28 @@
         console.log(index);
         console.log(valor);
       });
+      */
+
+      const funcaoRegular = function(parametro, parametro2) {
+        console.log('Alo');
+        return 5;
+      }
+
+      const funcaoSeta = (parametro, parametro2) => {
+        console.log('Alo');
+        return 5;
+      };
+      funcaoSeta();
+
+      const umParametro = parametro => {
+        console.log(parametro + 1);
+      };
+      umParametro(2);
+
+
+      //função de uma linha só
+      const umalinha = () => 2 + 3;
+      console.log(umalinha());
     </script>
   </body>
 </head>
