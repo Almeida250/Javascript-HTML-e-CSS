@@ -1,0 +1,24 @@
+<html>
+  <head>
+      <!--atualização do exercicio 12n para remover os 2 primeiros 'ovo' da lista-->
+  </head>
+  <body>
+    <script>
+      function removerOvo(comida) {
+        let contarOvosRemovidos = 0;
+
+        return comida.filter(item => {
+
+          if (item === 'ovo' && contarOvosRemovidos < 2) {
+            contarOvosRemovidos ++;
+            return false;
+          }
+          return true;
+        });
+      }
+
+
+      console.log(removerOvo(['arroz', 'ovo', 'bacon', 'ovo', 'frango','ovo']));
+    </script>
+  </body>
+</html>

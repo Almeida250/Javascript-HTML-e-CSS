@@ -1,0 +1,24 @@
+<html>
+  <head>
+      <!--Criar uma função chamado addNum(array,num) onde ele vai pegar um array de numeros e retornar outro array onde cada numero é aumentado por 'num'-->
+  </head>
+  <body>
+    <script>
+      //função com loop
+      function addNum(array, num) {
+        let resultado = [];
+        for (let i = 0; i < array.length; i++) {
+          resultado.push(array[i] + num);
+        }
+        return resultado;
+      }
+      //função com map
+      function addNum2(array,num) {
+        return array.map(array => array + num)
+      }
+
+      console.log(addNum([2,3,4],2));
+      console.log(addNum2([8,9,12],4));
+    </script>
+  </body>
+</html>
