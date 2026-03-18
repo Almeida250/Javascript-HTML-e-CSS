@@ -2,7 +2,9 @@
 <html>
   <head>
   <!--Continuando do 12e,se a gente clicar no botão, esperar 1 ou 1.5 segundos, e clicar no botão denovo, percebe-se que na segunda vez, a mensagem desaparece muito rápido (por que o primeiro setTimeout ainda estava rodando e fazia com que a mensagem desaparecesse muito rapido)
-  Modifique o código para que quando a gente clicar no botão, ele da um 'refresh' de 2 segundos de espera (espere por 2 segundos DENOVO e ai remove a mensagem)-->
+  Modifique o código para que quando a gente clicar no botão, ele da um 'refresh' de 2 segundos de espera (espere por 2 segundos DENOVO e ai remove a mensagem)
+  EXERCICIO 12p: Atualizando as funções de exercícios anteriores, transformando elas em arrow functions e 
+  EXERCICIO 12q: mudando o "onclick=" para "addEventListener-->
   </head>
     <body>
       <button class="botao" onclick="mudarTexto();
@@ -12,16 +14,17 @@
   
         <script>
           let timeoutId;
-          function mudarTexto () {
+          document.querySelector('.botao')
+          .addEventListener('click', () => {
             const texto = document.querySelector('.texto');
             texto.innerHTML = 'Adicionado!'; 
-    
+            
             clearTimeout(timeoutId);
     
             timeoutId = setTimeout(function() {
               texto.innerHTML = '';
             }, 2000)
-          }
+          })
         </script>
     </body>
 </html>

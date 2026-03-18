@@ -6,20 +6,9 @@
   <title>App</title>
   </head>
   <body>
-    <button onclick="
-      nMensagen++;
-      mostrarNotificacao();
-    ">Adicionar</button>
+    <button class="adicionar">Adicionar</button>
 
-    <button onclick="
-      if (nMensagen > 0) {
-        nMensagen--;
-
-        if (nMensagen === 0) {
-          pararNotificacao();
-        }
-      }"
-    >Remover</button>
+    <button class="remover">Remover</button>
 
     <script>
       let intervaloId;
@@ -28,14 +17,30 @@
 
       let nMensagen = 2;
 
-      function mostrarNotificacao() {
+      document.querySelector('.adicionar')
+        .addEventListener('click', () => {
+          nMensagen++;
+          mostrarNotificacao();
+        })
+      document.querySelector('.remover')
+        .addEventListener('click', () => {
+          if (nMensagen > 0) {
+            nMensagen--;
+
+            if (nMensagen === 0) {
+              pararNotificacao();
+            }
+          }
+        })
+
+      const mostrarNotificacao = () => {
         if (estaMostrandoNotificacao) {
           return; // Sai da função se a notificação já estiver sendo exibida
         }
 
         estaMostrandoNotificacao = true; // Define como true após a verificação
 
-        intervaloId = setInterval(function() {
+        intervaloId = setInterval(() => {
           if (document.title === 'App') {
             document.title = `(${nMensagen }) novas mensagens`;
           } else {

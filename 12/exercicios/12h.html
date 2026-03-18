@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <!--Continuando do 12g, crie dois botões (Adicionar e remover mensagens) onde ao serem clicados, eles mudam o titulo da página-->
+  <!--Continuando do 12g, crie dois botões (Adicionar e remover mensagens) onde ao serem clicados, eles mudam o titulo da página
+  EXERCICIO 12p: Atualizando as funções de exercícios anteriores, transformando elas em arrow functions e 
+  EXERCICIO 12q: mudando o "onclick=" para "addEventListener-->
   <title>App</title>
   </head>
   <body>
-    <button onclick="
-    nMensagen++;
-    ">Adicionar</button>
+    <button class="adicionar">Adicionar</button>
 
-    <button onclick="
-    nMensagen--; 
-    ">Remover</button>
+    <button class="remover">Remover</button>
     <script>
-      let nMensagen = 2
+      let nMensagen = 2;
+      document.querySelector('.adicionar').addEventListener('click', () => nMensagen++);
+      document.querySelector('.remover').addEventListener('click', () => nMensagen--);
 
-      setInterval(function() {
+      setInterval(() => {
         if (document.title === 'App') {
           document.title = `(${nMensagen }) novas mensagens`;    
         } else {

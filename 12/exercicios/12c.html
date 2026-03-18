@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <!--Crie um botão onde depois de um segundo quando for clicado, o texto dele muda-->
+  <!--Crie um botão onde depois de um segundo quando for clicado, o texto dele muda
+      EXERCICIO 12p: Atualizando as funções de exercícios anteriores, transformando elas em arrow functions e 
+      EXERCICIO 12q: mudando o "onclick=" para "addEventListener"-->
   </head>
   <body>
-    <button class="terminar" onclick="mudarTexto()">terminar</button>
+    <button class="terminar">terminar</button>
       <script>
-        function mudarTexto () {
-          const botao = document.querySelector('.terminar');
+        document.querySelector('.terminar')
+          .addEventListener('click', () => {
+            const botao = document.querySelector('.terminar');
 
-          setTimeout(function() {
-            botao.innerHTML = 'terminado!';
-          }, 1000)
-        }
+            setTimeout(() => {
+              botao.innerHTML = 'terminado!';
+            }, 1000);
+          });
       </script>
   </body>
 </html>

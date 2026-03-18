@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--Continuando pelo 12c, Crie um botão onde quando clicado, aparece na hora o texto "carregando..." e depois de um segundo o texto muda para "terminado"-->
+    <!--Continuando pelo 12c, Crie um botão onde quando clicado, aparece na hora o texto "carregando..." e depois de um segundo o texto muda para "terminado"
+    EXERCICIO 12p: Atualizando as funções de exercícios anteriores, transformando elas em arrow functions e 
+    EXERCICIO 12q: mudando o "onclick=" para "addEventListener"-->
   </head>
   <body>
-    <button class="terminar" onclick="mudarTexto()">terminar</button>
+    <button class="terminar">terminar</button>
       <script>
-        function mudarTexto () {
-          const botao = document.querySelector('.terminar');
-          botao.innerHTML = 'carregando...';
+        document.querySelector('.terminar')
+          .addEventListener('click', () => {
+            const botao = document.querySelector('.terminar');
+            botao.innerHTML = 'carregando...';
 
-          setTimeout(function() {
-            botao.innerHTML = 'terminado!';
-          }, 1000)
-        }
+            setTimeout(() => {
+              botao.innerHTML = 'terminado!';
+            }, 1000);
+          });
       </script>
   </body>  
 </html>

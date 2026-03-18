@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--Crie um botão escrito 'adicionar ao carrinho'.Ao clicar nesse botão, aparece 'adicionado' embaixo dele, e depois de 2 segundos, essa mensagem some-->
+    <!--Crie um botão escrito 'adicionar ao carrinho'.Ao clicar nesse botão, aparece 'adicionado' embaixo dele, e depois de 2 segundos, essa mensagem some
+    EXERCICIO 12p: Atualizando as funções de exercícios anteriores, transformando elas em arrow functions e 
+    EXERCICIO 12q: mudando o "onclick=" para "addEventListener-->
   </head>
   <body>
-    <button class="botao" onclick="mudarTexto()">Adicionar ao carrinho</button>
+    <button class="botao">Adicionar ao carrinho</button>
     <p class="texto"></p>
       <script>
-        function mudarTexto () {
-          const texto = document.querySelector('.texto');
-          texto.innerHTML = 'Adicionado!'; 
+        document.querySelector('.botao')
+          .addEventListener('click', () => {
+            const texto = document.querySelector('.texto');
+            texto.innerHTML = 'Adicionado!'; 
 
-          setTimeout(function() {
-            texto.innerHTML = '';
-          }, 2000)
-        }
+            setTimeout(() => {
+              texto.innerHTML = '';
+            }, 2000);
+          });
       </script>
   </body>
 </html>
