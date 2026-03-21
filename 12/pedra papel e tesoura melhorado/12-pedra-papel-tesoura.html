@@ -7,13 +7,13 @@
   <body>
     <p class="titulo">Pedra Papel e Tesoura</p>
     <button class="botao-escolha js-botao-pedra">
-    <img src="/10/imagens/rock-emoji.png"  class="icone-escolha"></button>
+    <img src="/img/rock-emoji.png"  class="icone-escolha"></button>
 
     <button class="botao-escolha js-botao-papel">
-    <img src="/10/imagens/paper-emoji.png" class="icone-escolha"></button>
+    <img src="/img/paper-emoji.png" class="icone-escolha"></button>
 
     <button class="botao-escolha js-botao-tesoura">
-    <img src="/10/imagens/scissors-emoji.png" class="icone-escolha"></button>
+    <img src="/img/scissors-emoji.png" class="icone-escolha"></button>
 
 
     <p class="js-resultado resultado"></p>
@@ -21,17 +21,15 @@
     <p class="js-pontuacao pontuacao"></p>
 
 
-    <button onclick="
-      score.vitorias = 0;
-      score.derrotas = 0;
-      score.empates = 0;
-      localStorage.removeItem('score');
-      attPontuacao();
-    " class="botao-zerar-pontuacao">Zerar Pontuação</button>
+    <button class="botao-zerar-pontuacao">Zerar Pontuação</button>
 
-    <button class="botao-auto-play" onclick="
-     autoPlay();
-    ">Auto Play</button>
+    <button class="botao-auto-play">Auto Play</button>
+
+    <div class="confirmar-zerar-pontuacao js-confirmar-zerar-pontuacao" >
+      <p>Tem certeza que deseja zerar a pontuação?</p>
+      <button class="botao-zerar-sim botao-zerar-pontuacao">Sim</button>
+      <button class="botao-zerar-nao botao-zerar-pontuacao">Não</button>
+    </div>
 
     <script src="12-pedra-papel-tesoura.js"></script>
   </body>

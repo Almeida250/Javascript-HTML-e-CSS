@@ -17,18 +17,49 @@ function attPontuacao() {
 //Não é possivel fazer hoisting com Arrow Functions
 attPontuacao();
 
-function autoPlay() {
-  if (!autoPlayLigado) {
-    idIntervalo = setInterval(() => {
-      const playerMove = pickComputerMove();
-      playGame(playerMove);
-    }, 1000);
-    autoPlayLigado = true;
-  } else {
-    clearInterval(idIntervalo);
-    autoPlayLigado = false;
-  }
+document.querySelector('.botao-zerar-pontuacao')
+  .addEventListener('click', () => {
+    mostrarConfirmacaoReset();
+  });
+
+function mostrarConfirmacaoReset() {
+  document.querySelector('.js-confirmar-zerar-pontuacao').style.display = 'block';
 }
+
+document.querySelector('.botao-zerar-sim')
+  .addEventListener('click', () => {
+    score.vitorias = 0;
+    score.derrotas = 0;
+    score.empates = 0;
+    localStorage.removeItem('score')
+    attPontuacao();
+    document.querySelector('.js-confirmar-zerar-pontuacao').style.display = 'none';
+  })
+
+document.querySelector('.botao-zerar-nao')
+  .addEventListener('click', () => {
+    document.querySelector('.js-confirmar-zerar-pontuacao').style.display = 'none';
+  })
+
+
+document.querySelector('.botao-auto-play')
+  .addEventListener('click', () => {
+    if (!autoPlayLigado) {
+      idIntervalo = setInterval(() => {
+        const playerMove = pickComputerMove();
+        playGame(playerMove);
+      }, 1000);
+      autoPlayLigado = true;
+      document.querySelector('.botao-auto-play')
+        .innerHTML = `Desligar Auto Play`;
+      } else {
+      clearInterval(idIntervalo);
+      autoPlayLigado = false;
+      document.querySelector('.botao-auto-play')
+        .innerHTML = `Auto-Play`;
+      }
+    }
+  );
 
 //ao invés de usar "onclick" no HTML, atribui uma classe pros botões e usei o "addEventListener" 
 // com o parametro click e o parametro de função que chama a função "playGame" de cada botão
@@ -55,8 +86,14 @@ document.body.addEventListener('keydown', (evento) => {
     playGame('paper')
   } else if (evento.key === '3') {
     playGame('scissors')
+  } else if (evento.key === 'a') {
+    document.querySelector('.botao-auto-play')
+    .click();
+  } else if (evento.key === 'Backspace') {
+    document.querySelector('.botao-zerar-pontuacao')
+    .click();
   }
-})
+});
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -108,8 +145,8 @@ function playGame(playerMove) {
 
   document.querySelector('.js-escolha')
     .innerHTML = ` Você >  
-    <img src="/10/imagens/${playerMove}-emoji.png" class="icone-escolha">
-    <img src="/10/imagens/${computerMove}-emoji.png" class="icone-escolha">
+    <img src="/img/${playerMove}-emoji.png" class="icone-escolha">
+    <img src="/img/${computerMove}-emoji.png" class="icone-escolha">
     < Computador </p>
     `;
 }
